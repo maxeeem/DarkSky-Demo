@@ -18,6 +18,8 @@ class MainController: UITableViewController {
         }
     }
     
+    var api: API = DarkSkyAPI()
+    
     let cellID = "DayCell"
     let segueID = "DayDetail"
     
@@ -55,6 +57,10 @@ class MainController: UITableViewController {
             s.days = [Day(), Day(), Day(), Day(), Day()]
             
             s.refreshControl?.endRefreshing()
+        }
+        
+        api.getForecast { [weak self] days in
+            self?.days = days
         }
     }
     
