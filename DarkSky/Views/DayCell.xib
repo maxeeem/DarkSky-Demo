@@ -9,17 +9,78 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="HelveticaNeue.ttc">
+            <string>HelveticaNeue-Bold</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DayCell" id="KGk-i7-Jjw" customClass="DayCell" customModule="DarkSky" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DayCell" rowHeight="65" id="KGk-i7-Jjw" customClass="DayCell" customModule="DarkSky" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="65"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="64.5"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="🌎" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k1W-qu-SGf">
+                        <rect key="frame" x="16" y="13.5" width="32" height="38.5"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="32"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" text="Today" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eM2-X0-iFX">
+                        <rect key="frame" x="64" y="8" width="187" height="20.5"/>
+                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="72℉" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HSY-AT-59c">
+                        <rect key="frame" x="267" y="11" width="37" height="21"/>
+                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="58℉" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C8T-Hg-LCy">
+                        <rect key="frame" x="270" y="36" width="34" height="18"/>
+                        <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Summary" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DtP-kP-gkr">
+                        <rect key="frame" x="64" y="36.5" width="190" height="20"/>
+                        <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="k1W-qu-SGf" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="BS8-Gb-zzS"/>
+                    <constraint firstAttribute="trailing" secondItem="HSY-AT-59c" secondAttribute="trailing" constant="16" id="HQK-MW-6qc"/>
+                    <constraint firstAttribute="bottom" secondItem="DtP-kP-gkr" secondAttribute="bottom" constant="8" id="MGT-kG-KcU"/>
+                    <constraint firstAttribute="trailing" secondItem="C8T-Hg-LCy" secondAttribute="trailing" constant="16" id="MQe-nX-e5v"/>
+                    <constraint firstItem="HSY-AT-59c" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="11" id="gO8-4b-bWE"/>
+                    <constraint firstItem="C8T-Hg-LCy" firstAttribute="leading" secondItem="DtP-kP-gkr" secondAttribute="trailing" constant="16" id="gXw-KA-kTw"/>
+                    <constraint firstItem="eM2-X0-iFX" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="hud-6D-Z2H"/>
+                    <constraint firstItem="eM2-X0-iFX" firstAttribute="leading" secondItem="k1W-qu-SGf" secondAttribute="trailing" constant="16" id="hyv-ya-TbD"/>
+                    <constraint firstAttribute="bottom" secondItem="C8T-Hg-LCy" secondAttribute="bottom" constant="10.5" id="iGg-vH-ryv"/>
+                    <constraint firstItem="HSY-AT-59c" firstAttribute="leading" secondItem="eM2-X0-iFX" secondAttribute="trailing" constant="16" id="iZt-GM-4XK"/>
+                    <constraint firstItem="DtP-kP-gkr" firstAttribute="top" secondItem="eM2-X0-iFX" secondAttribute="bottom" constant="8" id="lKf-R4-vGG"/>
+                    <constraint firstItem="DtP-kP-gkr" firstAttribute="leading" secondItem="k1W-qu-SGf" secondAttribute="trailing" constant="16" id="r3l-YE-yiu"/>
+                    <constraint firstItem="k1W-qu-SGf" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="rml-tJ-kgY"/>
+                    <constraint firstItem="C8T-Hg-LCy" firstAttribute="top" secondItem="HSY-AT-59c" secondAttribute="bottom" constant="4" id="u0r-7O-iDK"/>
+                </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="emoji" destination="k1W-qu-SGf" id="I7b-WJ-jRM"/>
+                <outlet property="high" destination="HSY-AT-59c" id="z27-PU-ueC"/>
+                <outlet property="low" destination="C8T-Hg-LCy" id="f2I-ir-r7A"/>
+                <outlet property="summary" destination="DtP-kP-gkr" id="ga1-WO-988"/>
+                <outlet property="title" destination="eM2-X0-iFX" id="OIN-hz-CRz"/>
+            </connections>
+            <point key="canvasLocation" x="-115" y="41.5"/>
         </tableViewCell>
     </objects>
 </document>

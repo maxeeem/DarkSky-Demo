@@ -33,6 +33,8 @@ class MainController: UITableViewController {
         let cellNib = UINib(nibName: "DayCell", bundle: nil)
         tableView.register(cellNib, forCellReuseIdentifier: cellID)
         tableView.tableFooterView = UIView()
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 65
         
         /// register refresh action
         refreshControl!.addTarget(self, action: #selector(refreshData), for: .valueChanged)
@@ -48,20 +50,23 @@ class MainController: UITableViewController {
     // MARK: - Refresh action
     
     @objc func refreshData() {
-        /// simulate api call delay
-        DispatchQueue.main.asyncAfter(deadline: .now() + 4) { [weak self] in
-            guard let s = self else {
-                fatalError("Could not reassign `self`")
-            }
-            
-            s.days = [Day(), Day(), Day(), Day(), Day()]
-            
-            s.refreshControl?.endRefreshing()
-        }
-        
-        api.getForecast { [weak self] days in
+        api.getForecast({ [weak self] days in
+            /// set new `days` values
             self?.days = days
-        }
+            /// hide loading indicator after a small delay
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [weak self] in
+                self?.refreshControl?.endRefreshing()
+            }
+        }, failure: {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [weak self] in
+                /// hide loading indicator after a small delay
+                self?.refreshControl?.endRefreshing()
+                /// display error message
+                let alert = UIAlertController(title: "Server error", message: "There was an issue connecting to the server. Please try again later.", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .cancel))
+                self?.present(alert, animated: true)
+            }
+        })
     }
     
 

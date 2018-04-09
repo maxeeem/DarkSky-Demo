@@ -26,6 +26,7 @@
                     <navigationItem key="navigationItem" id="RdF-jF-16K"/>
                     <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="akY-EL-Oce">
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <attributedString key="attributedTitle">
                             <fragment content="Contacting the server">
                                 <attributes>
@@ -50,13 +51,55 @@
                     <view key="view" contentMode="scaleToFill" id="CdR-ZV-NQ5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Humidity:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ip3-TC-DCD">
+                                <rect key="frame" x="16" y="80" width="78" height="21"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Wind speed:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q4D-Pv-Wv7">
+                                <rect key="frame" x="16" y="109" width="100" height="21"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="37%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TZH-JE-XKL">
+                                <rect key="frame" x="102" y="80" width="257" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10 mph" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gho-cm-1oh">
+                                <rect key="frame" x="124" y="109" width="235" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="TZH-JE-XKL" firstAttribute="leading" secondItem="ip3-TC-DCD" secondAttribute="trailing" constant="8" id="1ds-Ko-o4x"/>
+                            <constraint firstItem="HYg-Bv-9aW" firstAttribute="trailing" secondItem="TZH-JE-XKL" secondAttribute="trailing" constant="16" id="2mA-Rz-o0q"/>
+                            <constraint firstItem="gho-cm-1oh" firstAttribute="centerY" secondItem="Q4D-Pv-Wv7" secondAttribute="centerY" id="6Ua-Jo-0Dw"/>
+                            <constraint firstItem="gho-cm-1oh" firstAttribute="leading" secondItem="Q4D-Pv-Wv7" secondAttribute="trailing" constant="8" id="9m5-EB-CFp"/>
+                            <constraint firstItem="Q4D-Pv-Wv7" firstAttribute="leading" secondItem="HYg-Bv-9aW" secondAttribute="leading" constant="16" id="KCs-du-WxC"/>
+                            <constraint firstItem="ip3-TC-DCD" firstAttribute="top" secondItem="HYg-Bv-9aW" secondAttribute="top" constant="16" id="KwL-Pa-C0N"/>
+                            <constraint firstItem="HYg-Bv-9aW" firstAttribute="trailing" secondItem="gho-cm-1oh" secondAttribute="trailing" constant="16" id="OFp-6w-Nsr"/>
+                            <constraint firstItem="TZH-JE-XKL" firstAttribute="centerY" secondItem="ip3-TC-DCD" secondAttribute="centerY" id="cbT-fU-V6z"/>
+                            <constraint firstItem="Q4D-Pv-Wv7" firstAttribute="top" secondItem="ip3-TC-DCD" secondAttribute="bottom" constant="8" id="hoA-X6-PNH"/>
+                            <constraint firstItem="ip3-TC-DCD" firstAttribute="leading" secondItem="HYg-Bv-9aW" secondAttribute="leading" constant="16" id="tZr-d3-nPb"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="HYg-Bv-9aW"/>
                     </view>
+                    <connections>
+                        <outlet property="humidity" destination="TZH-JE-XKL" id="Sxv-kK-CZZ"/>
+                        <outlet property="wind" destination="gho-cm-1oh" id="FzG-v8-wc0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yPN-Si-sGC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1671" y="133"/>
+            <point key="canvasLocation" x="1669.5999999999999" y="132.68365817091455"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="zvF-Js-AMi">
