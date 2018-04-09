@@ -24,6 +24,8 @@
 		7AA1119A20797E2E00B419F4 /* DayCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7AA1119620797E2E00B419F4 /* DayCell.xib */; };
 		7AA1119D20798A5C00B419F4 /* DarkSkyAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA1119C20798A5C00B419F4 /* DarkSkyAPI.swift */; };
 		7AA1119E20798A5C00B419F4 /* DarkSkyAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA1119C20798A5C00B419F4 /* DarkSkyAPI.swift */; };
+		7AA111A0207B13E200B419F4 /* Forecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA1119F207B13E200B419F4 /* Forecast.swift */; };
+		7AA111A1207B13E200B419F4 /* Forecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA1119F207B13E200B419F4 /* Forecast.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +54,7 @@
 		7AA1119520797E2E00B419F4 /* DayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayCell.swift; sourceTree = "<group>"; };
 		7AA1119620797E2E00B419F4 /* DayCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DayCell.xib; sourceTree = "<group>"; };
 		7AA1119C20798A5C00B419F4 /* DarkSkyAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkSkyAPI.swift; sourceTree = "<group>"; };
+		7AA1119F207B13E200B419F4 /* Forecast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forecast.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				7AA11191207975AF00B419F4 /* Day.swift */,
+				7AA1119F207B13E200B419F4 /* Forecast.swift */,
 			);
 			path = DataModel;
 			sourceTree = "<group>";
@@ -256,6 +260,7 @@
 			files = (
 				7AA1118B2079754A00B419F4 /* MainController.swift in Sources */,
 				7AA1119D20798A5C00B419F4 /* DarkSkyAPI.swift in Sources */,
+				7AA111A0207B13E200B419F4 /* Forecast.swift in Sources */,
 				7AA1118D2079756500B419F4 /* DetailController.swift in Sources */,
 				7AA1119720797E2E00B419F4 /* DayCell.swift in Sources */,
 				7AA11192207975AF00B419F4 /* Day.swift in Sources */,
@@ -269,6 +274,7 @@
 			files = (
 				7AA1118E2079756500B419F4 /* DetailController.swift in Sources */,
 				7AA1119E20798A5C00B419F4 /* DarkSkyAPI.swift in Sources */,
+				7AA111A1207B13E200B419F4 /* Forecast.swift in Sources */,
 				7AA1118F2079756800B419F4 /* MainController.swift in Sources */,
 				7AA1119820797E2E00B419F4 /* DayCell.swift in Sources */,
 				7AA11193207975AF00B419F4 /* Day.swift in Sources */,

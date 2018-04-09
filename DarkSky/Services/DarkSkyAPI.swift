@@ -9,7 +9,8 @@
 import Foundation
 
 protocol API {
-    func getForecast(_ completion: ([Day]) -> ())
+    /// using promises here could give us cleaner code and possibility of chaining
+    func getForecast(_ success: @escaping ([Day])->(), failure: @escaping ()->())
 }
 
 class DarkSkyAPI: API {
@@ -19,13 +20,30 @@ class DarkSkyAPI: API {
     let baseUrl = "https://api.darksky.net/forecast"
     let location = "32.715736,-117.161087"
     
-    func getForecast(_ completion: ([Day]) -> ()) {
-        let urlString = [baseUrl, secret, location].joined(separator: "/")
+    func getForecast(_ success: @escaping ([Day])->(), failure: @escaping ()->()) {
+        var urlString = [baseUrl, secret, location].joined(separator: "/")
+        urlString += "?exclude=[currently,minutely,hourly,alerts,flags]"
         let url = URL(string: urlString)!
-        
-        URLSession.shared.dataTask(with: url) { (data, response, error) in
-            if let data = data, let json = String(data: data, encoding: .utf8) {
-                print(json)
+
+        URLSession.shared.dataTask(with: url) { (data, _, _) in
+            /// since we're only coding for `happy paths`
+            /// we aren't checking for the correct response code
+            /// or the presence of errors
+            if let data = data {
+                do {
+                    let decoder = JSONDecoder()
+                    decoder.dateDecodingStrategy = .secondsSince1970
+                    let forecast = try decoder.decode(Forecast.self, from: data)
+                    let days = forecast.daily.data
+                    
+                    /// call `success` handler
+                    success(days)
+                    
+                } catch {
+                    failure()
+                }
+            } else {
+                failure()
             }
         }.resume()
     }
