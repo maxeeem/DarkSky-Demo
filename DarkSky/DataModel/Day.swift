@@ -11,21 +11,47 @@ import UIKit
 
 struct Day: Decodable {
     let time: Date
-    let summary: String?
-    internal let icon: String?
-    internal let temperatureHigh: Double?
-    internal let temperatureLow: Double?
-    internal let humidity: Double?
-    internal let windSpeed: Double?
+    let summary: String
+    internal let icon: String
+    internal let temperatureHigh: Double
+    internal let temperatureLow: Double
+    internal let humidity: Double
+    internal let windSpeed: Double
     
+    enum CodingKeys: String, CodingKey {
+        case time = "time"
+        case summary = "summary"
+        case icon = "icon"
+        case temperatureHigh = "temperatureHigh"
+        case temperatureLow = "temperatureLow"
+        case humidity = "humidity"
+        case windSpeed = "windSpeed"
+    }
+}
+
+extension Day {
     init(time: Date) {
         self.time = time
-        self.summary = nil
-        self.icon = nil
-        self.temperatureHigh = nil
-        self.temperatureLow = nil
-        self.humidity = nil
-        self.windSpeed = nil
+        self.summary = ""
+        self.icon = ""
+        self.temperatureHigh = 0
+        self.temperatureLow = 0
+        self.humidity = 0
+        self.windSpeed = 0
+    }
+    
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        
+        let time = try container.decode(Date.self, forKey: .time)
+        let summary = try container.decodeIfPresent(String.self, forKey: .summary) ?? ""
+        let icon = try container.decodeIfPresent(String.self, forKey: .icon) ?? ""
+        let tempHigh = try container.decodeIfPresent(Double.self, forKey: .temperatureHigh) ?? 0
+        let tempLow = try container.decodeIfPresent(Double.self, forKey: .temperatureLow) ?? 0
+        let humidity = try container.decodeIfPresent(Double.self, forKey: .humidity) ?? 0
+        let windSpeed = try container.decodeIfPresent(Double.self, forKey: .windSpeed) ?? 0
+        
+        self.init(time: time, summary: summary, icon: icon, temperatureHigh: tempHigh, temperatureLow: tempLow, humidity: humidity, windSpeed: windSpeed)
     }
 }
 
@@ -41,18 +67,14 @@ extension Day {
     }
     
     var high: String {
-        return "\(Int(temperatureHigh ?? 0))℉"
+        return "\(Int(temperatureHigh))℉"
     }
     
     var low: String {
-        return "\(Int(temperatureLow ?? 0))℉"
+        return "\(Int(temperatureLow))℉"
     }
     
     var emoji: String {
-        guard let icon = icon else {
-            return "🌎"
-        }
-        
         switch icon {
         case "clear-day", "clear-night":
             return "☀️"
@@ -73,17 +95,11 @@ extension Day {
         }
     }
     
-    var humidityPercent: String? {
-        guard let humidity = humidity else {
-            return nil
-        }
+    var humidityPercent: String {
         return "\(Int(humidity*100))%"
     }
     
-    var wind: String? {
-        guard let windSpeed = windSpeed else {
-            return nil
-        }
+    var wind: String {
         return "\(Int(windSpeed)) mph"
     }
     
