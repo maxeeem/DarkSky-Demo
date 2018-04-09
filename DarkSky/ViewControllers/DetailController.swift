@@ -16,13 +16,24 @@ class DetailController: UIViewController {
     @IBOutlet weak var wind: UILabel!
     
     
+    init(day: Day) {
+        self.day = day
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        self.day = nil
+        super.init(coder: aDecoder)
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         title = day.title
         
-        humidity.text = day.humidityPercent
-        wind.text = day.wind
+        humidity?.text = day.humidityPercent
+        wind?.text = day.wind
     }
 
 }

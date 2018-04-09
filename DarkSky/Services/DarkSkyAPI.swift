@@ -8,9 +8,13 @@
 
 import Foundation
 
-protocol API {
-    /// using promises here could give us cleaner code and possibility of chaining
-    func getForecast(_ success: @escaping ([Day])->(), failure: @escaping ()->())
+struct Forecast: Decodable {
+    let daily: Daily
+    
+    struct Daily: Decodable {
+        let summary: String
+        let data: [Day]
+    }
 }
 
 class DarkSkyAPI: API {

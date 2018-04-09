@@ -12,11 +12,21 @@ import UIKit
 struct Day: Decodable {
     let time: Date
     let summary: String?
-    private let icon: String?
-    private let temperatureHigh: Double?
-    private let temperatureLow: Double?
-    private let humidity: Double?
-    private let windSpeed: Double?
+    internal let icon: String?
+    internal let temperatureHigh: Double?
+    internal let temperatureLow: Double?
+    internal let humidity: Double?
+    internal let windSpeed: Double?
+    
+    init(time: Date) {
+        self.time = time
+        self.summary = nil
+        self.icon = nil
+        self.temperatureHigh = nil
+        self.temperatureLow = nil
+        self.humidity = nil
+        self.windSpeed = nil
+    }
 }
 
 extension Day {
@@ -78,4 +88,3 @@ extension Day {
     }
     
 }
-

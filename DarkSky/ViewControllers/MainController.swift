@@ -18,11 +18,22 @@ class MainController: UITableViewController {
         }
     }
     
-    var api: API = DarkSkyAPI()
+    var api: API
     
     let cellID = "DayCell"
     let segueID = "DayDetail"
     
+    
+    init(api: API) {
+        self.api = api
+        super.init(style: .plain)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        self.api = DarkSkyAPI()
+        super.init(coder: aDecoder)
+    }
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,14 +47,18 @@ class MainController: UITableViewController {
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 65
         
-        /// register refresh action
-        refreshControl!.addTarget(self, action: #selector(refreshData), for: .valueChanged)
+        /// create refresh control and register refresh action
+        let refreshControl = UIRefreshControl()
+        refreshControl.backgroundColor = .white
+        refreshControl.attributedTitle = NSAttributedString(string: "Contacting the server")
+        refreshControl.addTarget(self, action: #selector(refreshData), for: .valueChanged)
+        self.refreshControl = refreshControl
         
         /// show loading indicator
-        let offset = CGPoint(x: 0, y: tableView.contentOffset.y - refreshControl!.frame.height)
+        let offset = CGPoint(x: 0, y: tableView.contentOffset.y - refreshControl.frame.height)
         tableView.setContentOffset(offset, animated: true)
-        refreshControl!.beginRefreshing()
-        refreshControl!.sendActions(for: .valueChanged)
+        refreshControl.beginRefreshing()
+        refreshControl.sendActions(for: .valueChanged)
     }
 
     
@@ -54,12 +69,12 @@ class MainController: UITableViewController {
             /// set new `days` values
             self?.days = days
             /// hide loading indicator after a small delay
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [weak self] in
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                 self?.refreshControl?.endRefreshing()
             }
-        }, failure: {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [weak self] in
-                /// hide loading indicator after a small delay
+        }, failure: { [weak self] in
+            /// hide loading indicator after a small delay
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                 self?.refreshControl?.endRefreshing()
                 /// display error message
                 let alert = UIAlertController(title: "Server error", message: "There was an issue connecting to the server. Please try again later.", preferredStyle: .alert)

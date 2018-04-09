@@ -11,26 +11,32 @@ import XCTest
 
 class DarkSkyTests: XCTestCase {
     
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    func testEmptyForecast() {
+        let mockAPI = MockAPI(days: [])
+        let main = MainController(api: mockAPI)
+        
+        main.refreshData()
+        
+        XCTAssertTrue(main.days.isEmpty)
     }
     
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
+    func testNonEmptyForecast() {
+        let day = Day(time: Date())
+        let mockAPI = MockAPI(days: [day])
+        let main = MainController(api: mockAPI)
+        
+        main.refreshData()
+        
+        XCTAssertTrue(main.days.count == 1)
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    func testDetailController() {
+        let day = Day(time: Date())
+        let detail = DetailController(day: day)
+        
+        detail.viewDidLoad()
+        
+        XCTAssertTrue(detail.title == "Today")
     }
     
 }

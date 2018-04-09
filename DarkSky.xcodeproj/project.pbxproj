@@ -14,18 +14,19 @@
 		7AA1117F20796F2900B419F4 /* DarkSkyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA1117E20796F2900B419F4 /* DarkSkyTests.swift */; };
 		7AA1118B2079754A00B419F4 /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA1118A2079754A00B419F4 /* MainController.swift */; };
 		7AA1118D2079756500B419F4 /* DetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA1118C2079756500B419F4 /* DetailController.swift */; };
-		7AA1118E2079756500B419F4 /* DetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA1118C2079756500B419F4 /* DetailController.swift */; };
-		7AA1118F2079756800B419F4 /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA1118A2079754A00B419F4 /* MainController.swift */; };
 		7AA11192207975AF00B419F4 /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA11191207975AF00B419F4 /* Day.swift */; };
-		7AA11193207975AF00B419F4 /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA11191207975AF00B419F4 /* Day.swift */; };
 		7AA1119720797E2E00B419F4 /* DayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA1119520797E2E00B419F4 /* DayCell.swift */; };
-		7AA1119820797E2E00B419F4 /* DayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA1119520797E2E00B419F4 /* DayCell.swift */; };
 		7AA1119920797E2E00B419F4 /* DayCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7AA1119620797E2E00B419F4 /* DayCell.xib */; };
-		7AA1119A20797E2E00B419F4 /* DayCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7AA1119620797E2E00B419F4 /* DayCell.xib */; };
 		7AA1119D20798A5C00B419F4 /* DarkSkyAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA1119C20798A5C00B419F4 /* DarkSkyAPI.swift */; };
-		7AA1119E20798A5C00B419F4 /* DarkSkyAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA1119C20798A5C00B419F4 /* DarkSkyAPI.swift */; };
-		7AA111A0207B13E200B419F4 /* Forecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA1119F207B13E200B419F4 /* Forecast.swift */; };
-		7AA111A1207B13E200B419F4 /* Forecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA1119F207B13E200B419F4 /* Forecast.swift */; };
+		7AA111A3207B337000B419F4 /* MockAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA111A2207B337000B419F4 /* MockAPI.swift */; };
+		7AA111A5207B3C4300B419F4 /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA1118A2079754A00B419F4 /* MainController.swift */; };
+		7AA111A6207B3C4600B419F4 /* DetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA1118C2079756500B419F4 /* DetailController.swift */; };
+		7AA111A7207B3C5100B419F4 /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA11191207975AF00B419F4 /* Day.swift */; };
+		7AA111A9207B3C5700B419F4 /* DarkSkyAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA1119C20798A5C00B419F4 /* DarkSkyAPI.swift */; };
+		7AA111AA207B3C5900B419F4 /* MockAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA111A2207B337000B419F4 /* MockAPI.swift */; };
+		7AA111AB207B3C6400B419F4 /* DayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA1119520797E2E00B419F4 /* DayCell.swift */; };
+		7AA111B4207B4D3800B419F4 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA111B3207B4D3800B419F4 /* API.swift */; };
+		7AA111B5207B4D3800B419F4 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA111B3207B4D3800B419F4 /* API.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,7 +55,8 @@
 		7AA1119520797E2E00B419F4 /* DayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayCell.swift; sourceTree = "<group>"; };
 		7AA1119620797E2E00B419F4 /* DayCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DayCell.xib; sourceTree = "<group>"; };
 		7AA1119C20798A5C00B419F4 /* DarkSkyAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkSkyAPI.swift; sourceTree = "<group>"; };
-		7AA1119F207B13E200B419F4 /* Forecast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forecast.swift; sourceTree = "<group>"; };
+		7AA111A2207B337000B419F4 /* MockAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAPI.swift; sourceTree = "<group>"; };
+		7AA111B3207B4D3800B419F4 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 				7AA111892079751500B419F4 /* ViewControllers */,
 				7AA111942079766400B419F4 /* Views */,
 				7AA111902079759700B419F4 /* DataModel */,
+				7AA111AF207B4C8700B419F4 /* Protocols */,
 				7AA1119B20798A3D00B419F4 /* Services */,
 			);
 			path = DarkSky;
@@ -131,7 +134,6 @@
 			isa = PBXGroup;
 			children = (
 				7AA11191207975AF00B419F4 /* Day.swift */,
-				7AA1119F207B13E200B419F4 /* Forecast.swift */,
 			);
 			path = DataModel;
 			sourceTree = "<group>";
@@ -149,8 +151,17 @@
 			isa = PBXGroup;
 			children = (
 				7AA1119C20798A5C00B419F4 /* DarkSkyAPI.swift */,
+				7AA111A2207B337000B419F4 /* MockAPI.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		7AA111AF207B4C8700B419F4 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				7AA111B3207B4D3800B419F4 /* API.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -208,7 +219,6 @@
 					7AA1117920796F2900B419F4 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
-						TestTargetID = 7AA1116520796F2900B419F4;
 					};
 				};
 			};
@@ -247,7 +257,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7AA1119A20797E2E00B419F4 /* DayCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,10 +267,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7AA111B4207B4D3800B419F4 /* API.swift in Sources */,
 				7AA1118B2079754A00B419F4 /* MainController.swift in Sources */,
 				7AA1119D20798A5C00B419F4 /* DarkSkyAPI.swift in Sources */,
-				7AA111A0207B13E200B419F4 /* Forecast.swift in Sources */,
 				7AA1118D2079756500B419F4 /* DetailController.swift in Sources */,
+				7AA111A3207B337000B419F4 /* MockAPI.swift in Sources */,
 				7AA1119720797E2E00B419F4 /* DayCell.swift in Sources */,
 				7AA11192207975AF00B419F4 /* Day.swift in Sources */,
 				7AA1116A20796F2900B419F4 /* AppDelegate.swift in Sources */,
@@ -272,13 +282,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7AA1118E2079756500B419F4 /* DetailController.swift in Sources */,
-				7AA1119E20798A5C00B419F4 /* DarkSkyAPI.swift in Sources */,
-				7AA111A1207B13E200B419F4 /* Forecast.swift in Sources */,
-				7AA1118F2079756800B419F4 /* MainController.swift in Sources */,
-				7AA1119820797E2E00B419F4 /* DayCell.swift in Sources */,
-				7AA11193207975AF00B419F4 /* Day.swift in Sources */,
+				7AA111B5207B4D3800B419F4 /* API.swift in Sources */,
+				7AA111A9207B3C5700B419F4 /* DarkSkyAPI.swift in Sources */,
+				7AA111A5207B3C4300B419F4 /* MainController.swift in Sources */,
+				7AA111A6207B3C4600B419F4 /* DetailController.swift in Sources */,
+				7AA111AA207B3C5900B419F4 /* MockAPI.swift in Sources */,
+				7AA111A7207B3C5100B419F4 /* Day.swift in Sources */,
 				7AA1117F20796F2900B419F4 /* DarkSkyTests.swift in Sources */,
+				7AA111AB207B3C6400B419F4 /* DayCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -453,7 +464,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = K62S3548NM;
 				INFOPLIST_FILE = DarkSkyTests/Info.plist;
@@ -462,7 +472,6 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DarkSky.app/DarkSky";
 			};
 			name = Debug;
 		};
@@ -470,7 +479,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = K62S3548NM;
 				INFOPLIST_FILE = DarkSkyTests/Info.plist;
@@ -479,7 +487,6 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DarkSky.app/DarkSky";
 			};
 			name = Release;
 		};

@@ -24,18 +24,6 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="RdF-jF-16K"/>
-                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="akY-EL-Oce">
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <attributedString key="attributedTitle">
-                            <fragment content="Contacting the server">
-                                <attributes>
-                                    <font key="NSFont" metaFont="smallSystem"/>
-                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                </attributes>
-                            </fragment>
-                        </attributedString>
-                    </refreshControl>
                     <connections>
                         <segue destination="tqO-5u-7ZE" kind="show" identifier="DayDetail" id="Mya-Bo-xz7"/>
                     </connections>
